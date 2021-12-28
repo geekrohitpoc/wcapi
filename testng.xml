@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Techechelons API Tests">
+    <test name="SanityTest" verbose="10" parallel="classes" thread-count="3">
+        <groups>
+            <run>
+                <include name="sanity"></include>
+            </run>
+        </groups>
+        <packages>
+            <package name="test.Flag"></package>
+            <package name="test.Image"></package>
+            <package name="test.Note"></package>
+            <package name="test.Voice"></package>
+            <package name="test.Trip"></package>
+            <package name="test.Video"></package>
+        </packages>
+    </test>
+</suite>
