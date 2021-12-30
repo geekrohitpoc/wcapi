@@ -3,7 +3,7 @@ package main.java.pojo.chat;
 public class CreateGroup {
     private String roomName;
     private int createdBy;
-    private int createdByUsername;
+    private String createdByUsername;
 
     public String getRoomName() {
         return roomName;
@@ -21,11 +21,11 @@ public class CreateGroup {
         this.createdBy = createdBy;
     }
 
-    public int getCreatedByUsername() {
+    public String getCreatedByUsername() {
         return createdByUsername;
     }
 
-    public void setCreatedByUsername(int createdByUsername) {
+    public void setCreatedByUsername(String createdByUsername) {
         this.createdByUsername = createdByUsername;
     }
 }

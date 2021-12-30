@@ -6,6 +6,7 @@ public class AddMessage {
     private int participantId;
     private int parentId;
     private String username;
+    private int userId;
     private String receiverUsername;
     private int receiverUserId;
     private String mediaUrl;
@@ -46,6 +47,15 @@ public class AddMessage {
     public String getUsername() {
         return username;
     }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
 
     public void setUsername(String username) {
         this.username = username;

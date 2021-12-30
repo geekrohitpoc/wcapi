@@ -4,7 +4,7 @@ public class SendChatRequest {
     private int fromUserId;
     private String fromUsername;
     private String toUsername;
-    private int userId;
+    private int toUserId;
 
     public int getFromUserId() {
         return fromUserId;
@@ -30,12 +30,12 @@ public class SendChatRequest {
         this.toUsername = toUsername;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getToUserId() {
+        return toUserId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setToUserId(int userId) {
+        this.toUserId = userId;
     }
 }
 

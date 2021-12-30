@@ -1,210 +1,161 @@
 package main.java.helpers;
 
-import main.java.pojo.flag.AddFlag;
-import main.java.pojo.flag.GetPublicFlagByCoordinate;
-import main.java.pojo.flag.*;
-import main.java.pojo.image.InsertImage;
-import main.java.pojo.note.InsertNote;
-import main.java.pojo.note.UpdateNote;
-import main.java.pojo.trip.*;
-import main.java.pojo.video.InsertVideo;
-import main.java.pojo.voice.InsertVoice;
-
-import java.util.ArrayList;
+import main.java.pojo.chat.*;
 
 public class CommonHelpers {
-    public static ManageTrip createBodyForManageTripApi(String tripId, int userId,Start start, End end, String tripName, int is_purchased, int is_completed, int is_published, String purchased_trip_id){
-        ManageTrip manageTrip = new ManageTrip();
-        manageTrip.setTripId(tripId);
-        manageTrip.setUserId(userId);
-        manageTrip.setTripName(tripName);
-        manageTrip.setIs_purchased(is_purchased);
-        manageTrip.setIs_completed(is_completed);
-        manageTrip.setIs_published(is_published);
-        manageTrip.setStart(start);
-        manageTrip.setEnd(end);
-        manageTrip.setPurchased_trip_id(purchased_trip_id);
-        return manageTrip;
+    public static AddRoom createBodyForAddRoom(String room_name, int created_by, String created_by_username, boolean is_group, String receiver_username, int receiver_user_id ){
+        AddRoom addRoom = new AddRoom();
+        addRoom.setRoomName(room_name);
+        addRoom.setCreatedBy(created_by);
+        addRoom.setCreatedByUsername(created_by_username);
+        addRoom.setGroup(is_group);
+        addRoom.setReceiverUsername(receiver_username);
+        addRoom.setReceiverUserId(receiver_user_id);
+        return addRoom;
     }
 
-    public static Start createBodyForStart(String placeName, Coordinates coordinates, String createdOn){
-        Start start = new Start();
-        start.setPlaceName(placeName);
-        start.setCoordinates(coordinates);
-        start.setCreatedOn(createdOn);
-        return start;
+    public static AddMessage createBodyForAddMessage(String message, int room_id, int participant_id, int parent_id, int user_id, String username, String receiver_username, int receiver_user_id, String media_url, int media_type_id){
+        AddMessage addMessage = new AddMessage();
+        addMessage.setMessage(message);
+        addMessage.setRoomId(room_id);
+        addMessage.setParticipantId(participant_id);
+        addMessage.setParentId(parent_id);
+        addMessage.setUserId(user_id);
+        addMessage.setUsername(username);
+        addMessage.setReceiverUsername(receiver_username);
+        addMessage.setReceiverUserId(receiver_user_id);
+        addMessage.setMediaUrl(media_url);
+        addMessage.setMediaTypeId(media_type_id);
+        return addMessage;
     }
 
-    public static End createBodyForEnd(String placeName, Coordinates coordinates, String endAt){
-        End end = new End();
-        end.setPlaceName(placeName);
-        end.setCoordinates(coordinates);
-        end.setEndAt(endAt);
-        return end;
+    public static DeleteMessage createBodyForDeleteMessage(int room_id, int message_id, int user_id, String username, String receiver_username, int receiver_user_id){
+        DeleteMessage deleteMessage = new DeleteMessage();
+        deleteMessage.setRoomId(room_id);
+        deleteMessage.setMessageId(message_id);
+        deleteMessage.setUserId(user_id);
+        deleteMessage.setUsername(username);
+        deleteMessage.setReceiverUsername(receiver_username);
+        deleteMessage.setReceiverUserId(receiver_user_id);
+        return deleteMessage;
     }
 
-    public static Coordinates createBodyForCoordinates(double latitude, double longitude){
-        Coordinates coordinates = new Coordinates();
-        coordinates.setLatitude(latitude);
-        coordinates.setLongitude(longitude);
-        return coordinates;
+    public static DeleteConversation createBodyForDeleteConversation(int participant_id, int deleted_by){
+        DeleteConversation deleteConversation = new DeleteConversation();
+        deleteConversation.setParticipantId(participant_id);
+        deleteConversation.setDeletedBy(deleted_by);
+        return deleteConversation;
     }
 
-    public static ManageTripActivity createBodyForManageTripActivity(int tripId, int userId, String id, int categoryId, String name, int active, ArrayList<PausedResume> pausedResume, ArrayList<Analytics> analytics, ArrayList<RouteRecord> routeRecord, Start start, End end){
-        ManageTripActivity manageTripActivity = new ManageTripActivity();
-        manageTripActivity.setTripId(tripId);
-        manageTripActivity.setUserId(userId);
-        manageTripActivity.setId(id);
-        manageTripActivity.setCategoryId(categoryId);
-        manageTripActivity.setName(name);
-        manageTripActivity.setActive(active);
-        manageTripActivity.setPausedResume(pausedResume);
-        manageTripActivity.setAnalytics(analytics);
-        manageTripActivity.setRouteRecord(routeRecord);
-        manageTripActivity.setStart(start);
-        manageTripActivity.setEnd(end);
-        return manageTripActivity;
+    public static GetUserChatMessages createBodyForGetUserChatMessages(int room_id, int participant_id, int user_id){
+        GetUserChatMessages getUserChatMessages = new GetUserChatMessages();
+        getUserChatMessages.setRoomId(room_id);
+        getUserChatMessages.setParticipantId(participant_id);
+        getUserChatMessages.setUserId(user_id);
+        return getUserChatMessages;
     }
 
-    public static RouteRecord createBodyForRouteRecord(double latitude, double longitude){
-        RouteRecord routeRecord = new RouteRecord();
-        routeRecord.setLatitude(latitude);
-        routeRecord.setLongitude(longitude);
-        return routeRecord;
+    public static GetChatUsersList createBodyForGetChatUsersList(int user_id){
+        GetChatUsersList getChatUsersList = new GetChatUsersList();
+        getChatUsersList.setUserId(user_id);
+        return getChatUsersList;
     }
 
-    public static Analytics createBodyForAnalytics(int speed, String time, int distanceCovered, int calariesBerned){
-        Analytics analytics = new Analytics();
-        analytics.setSpeed(speed);
-        analytics.setTime(time);
-        analytics.setDistanceCovered(distanceCovered);
-        analytics.setCalariesBerned(calariesBerned);
-        return analytics;
+    public static GetChatRequestsList createBodyForGetChatRequestsList(int user_id){
+        GetChatRequestsList getChatRequestsList = new GetChatRequestsList();
+        getChatRequestsList.setUserId(user_id);
+        return getChatRequestsList;
     }
 
-    public static PausedResume createBodyForPausedResume(String pausedAt, String resumedAt, PausedLocation pausedLocation){
-        PausedResume pausedResume = new PausedResume();
-        pausedResume.setPausedAt(pausedAt);
-        pausedResume.setResumedAt(resumedAt);
-        pausedResume.setPausedLocation(pausedLocation);
-        return pausedResume;
+    public static MarkUserChatAsRead createBodyForMarkUserChatAsRead(int participant_id, int user_id, String username, String receiver_username, int receiver_user_id){
+        MarkUserChatAsRead markUserChatAsRead = new MarkUserChatAsRead();
+        markUserChatAsRead.setParticipantId(participant_id);
+        markUserChatAsRead.setUserId(user_id);
+        markUserChatAsRead.setUsername(username);
+        markUserChatAsRead.setReceiversUsername(receiver_username);
+        markUserChatAsRead.setReceiverUserId(receiver_user_id);
+        return markUserChatAsRead;
     }
 
-    public static PausedLocation createBodyForPausedLocation(String placeName, Coordinates coordinates){
-        PausedLocation pausedLocation = new PausedLocation();
-        pausedLocation.setPlaceName(placeName);
-        pausedLocation.setCoordinates(coordinates);
-        return pausedLocation;
+    public static SendChatRequest createBodyForSendChatRequest(int from_user_id, String from_username, String to_username, int to_user_id){
+        SendChatRequest sendChatRequest = new SendChatRequest();
+        sendChatRequest.setFromUserId(from_user_id);
+        sendChatRequest.setFromUsername(from_username);
+        sendChatRequest.setToUsername(to_username);
+        sendChatRequest.setToUserId(to_user_id);
+        return sendChatRequest;
     }
 
-    public static UpdateTripStatus createBodyForUpdateTripStatus(int trip_id, boolean is_published){
-        UpdateTripStatus updateTripStatus = new UpdateTripStatus();
-        updateTripStatus.setTrip_id(trip_id);
-        updateTripStatus.setIs_published(is_published);
-        return updateTripStatus;
+    public static UpdateChatRequest createBodyForUpdateChatRequest(int participant_id, int current_user_id, String current_username, String sender_username, int sender_user_id, int request_status){
+        UpdateChatRequest updateChatRequest = new UpdateChatRequest();
+        updateChatRequest.setParticipantId(participant_id);
+        updateChatRequest.setCurrentUserId(current_user_id);
+        updateChatRequest.setCurrentUsername(current_username);
+        updateChatRequest.setSenderUsername(sender_username);
+        updateChatRequest.setSenderUserId(sender_user_id);
+        updateChatRequest.setRequestStatus(request_status);
+        return updateChatRequest;
     }
 
-    public static AddFlag createBodyForAddFlag(String flag_name, double latitude, double longitude, boolean is_like, int trip_id, int category_id, int user_id){
-        AddFlag addFlag = new AddFlag();
-        addFlag.setFlag_name(flag_name);
-        addFlag.setLatitude(latitude);
-        addFlag.setLongitude(longitude);
-        addFlag.setIs_like(is_like);
-        addFlag.setTrip_id(trip_id);
-        addFlag.setCategory_id(category_id);
-        addFlag.setUser_id(user_id);
-        return addFlag;
+    public static CheckRoom createBodyForCheckRoom(int sender_user_id, String sender_username, int receiver_user_id, String receiver_username){
+        CheckRoom checkRoom = new CheckRoom();
+        checkRoom.setSenderUserId(sender_user_id);
+        checkRoom.setSenderUsername(sender_username);
+        checkRoom.setReceiverUserId(receiver_user_id);
+        checkRoom.setReceiverUsername(receiver_username);
+        return checkRoom;
     }
 
-    public static GetFlagByMe createBodyForGetFlagByMe(double latitude, double longitude, int user_id){
-        GetFlagByMe flagByMe = new GetFlagByMe();
-        flagByMe.setLatitude(latitude);
-        flagByMe.setLongitude(longitude);
-        flagByMe.setUser_id(user_id);
-        return flagByMe;
+    public static CreateGroup createBodyForCreateGroup(String room_name, int created_by, String created_by_username){
+        CreateGroup createGroup = new CreateGroup();
+        createGroup.setRoomName(room_name);
+        createGroup.setCreatedBy(created_by);
+        createGroup.setCreatedByUsername(created_by_username);
+        return createGroup;
     }
 
-    public static GetFlagByOthers createBodyForGetFlagByOthers(double latitude, double longitude, int user_id){
-        GetFlagByOthers flagByOthers = new GetFlagByOthers();
-        flagByOthers.setLatitude(latitude);
-        flagByOthers.setLongitude(longitude);
-        flagByOthers.setUser_id(user_id);
-        return flagByOthers;
+    public static UpdateGroupName createBodyForUpdateGroupName(int room_id, String room_name, int created_by, String created_by_username, int participant_id){
+        UpdateGroupName updateGroupName = new UpdateGroupName();
+        updateGroupName.setRoomId(room_id);
+        updateGroupName.setRoomName(room_name);
+        updateGroupName.setCreatedBy(created_by);
+        updateGroupName.setCreatedByUsername(created_by_username);
+        updateGroupName.setParticipantId(participant_id);
+        return updateGroupName;
     }
 
-    public static GetPublicFlagByCoordinate createBodyForGetPublicFlagByCoordinates(double latitude, double longitude, int user_id){
-        GetPublicFlagByCoordinate publicFlagByCoordinate = new GetPublicFlagByCoordinate();
-        publicFlagByCoordinate.setLatitude(latitude);
-        publicFlagByCoordinate.setLongitude(longitude);
-        publicFlagByCoordinate.setUser_id(user_id);
-        return publicFlagByCoordinate;
+    public static AddGroupMembers createBodyForGroupMembers(int room_id, int created_by, String created_by_username){
+        AddGroupMembers addGroupMembers = new AddGroupMembers();
+        addGroupMembers.setRoomId(room_id);
+        addGroupMembers.setCreatedBy(created_by);
+        addGroupMembers.setCreatedByUsername(created_by_username);
+        return addGroupMembers;
     }
 
-    public static UpdateFlagStatus createBodyForUpdateFlagStatus(int flag_id, boolean is_like, int user_id){
-        UpdateFlagStatus updateFlagStatus = new UpdateFlagStatus();
-        updateFlagStatus.setFlag_id(flag_id);
-        updateFlagStatus.setIs_like(is_like);
-        updateFlagStatus.setUser_id(user_id);
-        return  updateFlagStatus;
+    public static DeleteGroup createBodyForDeleteGroup(int room_id, int deleted_by, String deleted_by_username){
+        DeleteGroup deleteGroup = new DeleteGroup();
+        deleteGroup.setRoomId(room_id);
+        deleteGroup.setDeletedBy(deleted_by);
+        deleteGroup.setDeletedByUsername(deleted_by_username);
+        return deleteGroup;
     }
 
-    public static InsertNote createBodyForInsertNote(String note, double latitude, double longitude, String location_name, int trip_id, int user_id, int activity_id){
-        InsertNote insertNote = new InsertNote();
-        insertNote.setNote(note);
-        insertNote.setLatitude(latitude);
-        insertNote.setLongitude(longitude);
-        insertNote.setLocation_name(location_name);
-        insertNote.setTrip_id(trip_id);
-        insertNote.setUser_id(user_id);
-        insertNote.setActivity_id(activity_id);
-        return insertNote;
+    public static LeaveGroup createBodyForLeaveGroup(int room_id, int user_id, String username, int deleted_by, String deleted_by_username, int participant_id){
+        LeaveGroup leaveGroup = new LeaveGroup();
+        leaveGroup.setRoomId(room_id);
+        leaveGroup.setUserId(user_id);
+        leaveGroup.setUsername(username);
+        leaveGroup.setDeletedBy(deleted_by);
+        leaveGroup.setDeletedByUsername(deleted_by_username);
+        leaveGroup.setParticipantId(participant_id);
+        return leaveGroup;
     }
 
-    public static UpdateNote createBodyForUpdateNote(String note, int id){
-        UpdateNote updateNote = new UpdateNote();
-        updateNote.setNote(note);
-        updateNote.setId(id);
-        return updateNote;
+    public static ManageBlackList createBodyForManageBlackList(int user_id, int blocked_by, boolean is_blocked){
+        ManageBlackList manageBlackList = new ManageBlackList();
+        manageBlackList.setUserId(user_id);
+        manageBlackList.setBlockedBy(blocked_by);
+        manageBlackList.setBlocked(is_blocked);
+        return manageBlackList;
     }
-
-    public static InsertVideo createBodyForInsertVideo(String filename, String duration, String video_url, double latitude, double longitude, String location_name, int trip_id, int user_id, int activity_id){
-        InsertVideo insertVideo = new InsertVideo();
-        insertVideo.setFilename(filename);
-        insertVideo.setDuration(duration);
-        insertVideo.setVideo_url(video_url);
-        insertVideo.setLatitude(latitude);
-        insertVideo.setLongitude(longitude);
-        insertVideo.setLocation_name(location_name);
-        insertVideo.setTrip_id(trip_id);
-        insertVideo.setUser_id(user_id);
-        insertVideo.setActivity_id(activity_id);
-        return insertVideo;
-    }
-
-    public static InsertVoice createBodyForInsertVoice(String filename, String duration, String video_url, double latitude, double longitude, String location_name, int trip_id, int user_id, int activity_id){
-        InsertVoice insertVoice = new InsertVoice();
-        insertVoice.setFilename(filename);
-        insertVoice.setDuration(duration);
-        insertVoice.setVoice_url(video_url);
-        insertVoice.setLatitude(latitude);
-        insertVoice.setLongitude(longitude);
-        insertVoice.setLocation_name(location_name);
-        insertVoice.setTrip_id(trip_id);
-        insertVoice.setUser_id(user_id);
-        insertVoice.setActivity_id(activity_id);
-        return insertVoice;
-    }
-
-    public static InsertImage createBodyForInsertImage(String image_url, double latitude, double longitude, String location_name, int trip_id, int user_id, int activity_id){
-        InsertImage insertImage = new InsertImage();
-        insertImage.setImage_url(image_url);
-        insertImage.setLatitude(latitude);
-        insertImage.setLongitude(longitude);
-        insertImage.setLocation_name(location_name);
-        insertImage.setTrip_id(trip_id);
-        insertImage.setUser_id(user_id);
-        insertImage.setActivity_id(activity_id);
-        return insertImage;
-    }
-
 }
