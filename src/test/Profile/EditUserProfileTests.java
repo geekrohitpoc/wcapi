@@ -20,7 +20,7 @@ public class EditUserProfileTests extends EnvironmentHelper {
     EditUserProfile editUserProfile = ProfileHelpers.createBodyForEditUserProfile("Naishad", "I love adventures", meta);
 
     @Test(groups = {"sanity", "regression"})
-    public void verifyThatUserCanDeleteComment() throws IOException {
+    public void verifyThatUserCanEditUserProfile() throws IOException {
         String ENDPOINT = UtilsHelpers.getProperties("ProfileEndpoints.properties", "EDIT_USER_PROFILE_ENDPOINT");
         ResponseBodyExtractionOptions response = given().
                 config(RestAssuredConfig.config().encoderConfig(EncoderConfig.encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false))).

@@ -8,12 +8,9 @@
             </run>
         </groups>
         <packages>
-            <package name="test.Flag"></package>
-            <package name="test.Image"></package>
-            <package name="test.Note"></package>
-            <package name="test.Voice"></package>
-            <package name="test.Trip"></package>
-            <package name="test.Video"></package>
+            <package name="test.Chat"></package>
+            <package name="test.Profile"></package>
+            <package name="test.AthleteProgram"></package>
         </packages>
     </test>
 </suite>

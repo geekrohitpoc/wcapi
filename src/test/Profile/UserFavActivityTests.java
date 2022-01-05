@@ -21,7 +21,7 @@ public class UserFavActivityTests extends EnvironmentHelper {
     UserFavActivities userFavActivities = ProfileHelpers.creatBodyForUserFavActivities(Arrays.asList(ids));
 
     @Test(groups = {"sanity", "regression"})
-    public void verifyThatUserCanDeleteComment() throws IOException {
+    public void verifyThatUserSeeUserFavActivities() throws IOException {
         String ENDPOINT = UtilsHelpers.getProperties("ProfileEndpoints.properties", "USER_FAV_ACTIVITIES_ENDPOINT");
         ResponseBodyExtractionOptions response = given().
                 config(RestAssuredConfig.config().encoderConfig(EncoderConfig.encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false))).
