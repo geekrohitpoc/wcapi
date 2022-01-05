@@ -3,7 +3,7 @@ package test.Chat;
 import io.restassured.config.EncoderConfig;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.response.ResponseBodyExtractionOptions;
-import main.java.helpers.CommonHelpers;
+import main.java.helpers.ChatHelpers;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.UtilsHelpers;
 import main.java.pojo.chat.LeaveGroup;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import static io.restassured.RestAssured.given;
 
 public class LeaveGroupTests extends EnvironmentHelper {
-    LeaveGroup leaveGroup = CommonHelpers.createBodyForLeaveGroup(2, 104, "ndv", 104, "Varun28", 4);
+    LeaveGroup leaveGroup = ChatHelpers.createBodyForLeaveGroup(2, 104, "ndv", 104, "Varun28", 4);
 
     @Test(groups = {"sanity", "regression"})
     public void verifyThatUserCanLeaveGroup() throws IOException {
