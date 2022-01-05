@@ -18,7 +18,7 @@ public class AcceptFollowTests extends EnvironmentHelper {
     AcceptFollower acceptFollower = ProfileHelpers.createBodyForAcceptFollower(68, 17);
 
     @Test(groups = {"sanity", "regression"})
-    public void verifyThatUserCanDeleteComment() throws IOException {
+    public void verifyThatUserAcceptFollow() throws IOException {
         String ENDPOINT = UtilsHelpers.getProperties("ProfileEndpoints.properties", "ACCEPT_FOLLOW_ENDPOINT");
         ResponseBodyExtractionOptions response = given().
                 config(RestAssuredConfig.config().encoderConfig(EncoderConfig.encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false))).

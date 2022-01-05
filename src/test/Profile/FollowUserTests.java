@@ -17,7 +17,7 @@ public class FollowUserTests extends EnvironmentHelper {
     FollowUser followUser = ProfileHelpers.createBodyForFollowUser(14,17);
 
     @Test(groups = {"sanity", "regression"})
-    public void verifyThatUserCanDeleteComment() throws IOException {
+    public void verifyThatUserCanFollow() throws IOException {
         String ENDPOINT = UtilsHelpers.getProperties("ProfileEndpoints.properties", "FOLLOW_USER_ENDPOINT");
         ResponseBodyExtractionOptions response = given().
                 config(RestAssuredConfig.config().encoderConfig(EncoderConfig.encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false))).
