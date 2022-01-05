@@ -3,7 +3,7 @@ package test.Chat;
 import io.restassured.config.EncoderConfig;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.response.ResponseBodyExtractionOptions;
-import main.java.helpers.CommonHelpers;
+import main.java.helpers.ChatHelpers;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.UtilsHelpers;
 import main.java.pojo.chat.UpdateGroupName;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import static io.restassured.RestAssured.given;
 
 public class UpdateGroupNameTests extends EnvironmentHelper {
-    UpdateGroupName updateGroupName = CommonHelpers.createBodyForUpdateGroupName(36, "ICC T20", 36,"ImranShaikh", 4);
+    UpdateGroupName updateGroupName = ChatHelpers.createBodyForUpdateGroupName(36, "ICC T20", 36,"ImranShaikh", 4);
 
     @Test(groups = {"sanity", "regression"})
     public void verifyThatUserCanUpdateTheGroupName() throws IOException {

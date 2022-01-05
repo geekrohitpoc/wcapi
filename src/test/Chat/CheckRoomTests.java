@@ -3,7 +3,7 @@ package test.Chat;
 import io.restassured.config.EncoderConfig;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.response.ResponseBodyExtractionOptions;
-import main.java.helpers.CommonHelpers;
+import main.java.helpers.ChatHelpers;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.UtilsHelpers;
 import main.java.pojo.chat.CheckRoom;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import static io.restassured.RestAssured.given;
 
 public class CheckRoomTests extends EnvironmentHelper {
-    CheckRoom checkRoom = CommonHelpers.createBodyForCheckRoom(104, "Varun28", 36, "ImranShaikh");
+    CheckRoom checkRoom = ChatHelpers.createBodyForCheckRoom(104, "Varun28", 36, "ImranShaikh");
 
     @Test(groups = {"sanity", "regression"})
     public void veryThatUserCanCheckRoom() throws IOException {

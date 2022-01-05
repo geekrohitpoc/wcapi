@@ -2,7 +2,7 @@ package main.java.helpers;
 
 import main.java.pojo.chat.*;
 
-public class CommonHelpers {
+public class ChatHelpers {
     public static AddRoom createBodyForAddRoom(String room_name, int created_by, String created_by_username, boolean is_group, String receiver_username, int receiver_user_id ){
         AddRoom addRoom = new AddRoom();
         addRoom.setRoomName(room_name);
