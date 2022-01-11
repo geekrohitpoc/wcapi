@@ -3,7 +3,7 @@ package main.java.helpers;
 import main.java.pojo.chat.*;
 
 public class ChatHelpers {
-    public static AddRoom createBodyForAddRoom(String room_name, int created_by, String created_by_username, boolean is_group, String receiver_username, int receiver_user_id ){
+    public static AddRoom createBodyForAddRoom(String room_name, int created_by, String created_by_username, boolean is_group, String receiver_username, int receiver_user_id) {
         AddRoom addRoom = new AddRoom();
         addRoom.setRoomName(room_name);
         addRoom.setCreatedBy(created_by);
@@ -14,7 +14,7 @@ public class ChatHelpers {
         return addRoom;
     }
 
-    public static AddMessage createBodyForAddMessage(String message, int room_id, int participant_id, int parent_id, int user_id, String username, String receiver_username, int receiver_user_id, String media_url, int media_type_id){
+    public static AddMessage createBodyForAddMessage(String message, int room_id, int participant_id, int parent_id, int user_id, String username, String receiver_username, int receiver_user_id, String media_url, int media_type_id) {
         AddMessage addMessage = new AddMessage();
         addMessage.setMessage(message);
         addMessage.setRoomId(room_id);
@@ -29,7 +29,7 @@ public class ChatHelpers {
         return addMessage;
     }
 
-    public static DeleteMessage createBodyForDeleteMessage(int room_id, int message_id, int user_id, String username, String receiver_username, int receiver_user_id){
+    public static DeleteMessage createBodyForDeleteMessage(int room_id, int message_id, int user_id, String username, String receiver_username, int receiver_user_id) {
         DeleteMessage deleteMessage = new DeleteMessage();
         deleteMessage.setRoomId(room_id);
         deleteMessage.setMessageId(message_id);
@@ -40,14 +40,14 @@ public class ChatHelpers {
         return deleteMessage;
     }
 
-    public static DeleteConversation createBodyForDeleteConversation(int participant_id, int deleted_by){
+    public static DeleteConversation createBodyForDeleteConversation(int participant_id, int deleted_by) {
         DeleteConversation deleteConversation = new DeleteConversation();
         deleteConversation.setParticipantId(participant_id);
         deleteConversation.setDeletedBy(deleted_by);
         return deleteConversation;
     }
 
-    public static GetUserChatMessages createBodyForGetUserChatMessages(int room_id, int participant_id, int user_id){
+    public static GetUserChatMessages createBodyForGetUserChatMessages(int room_id, int participant_id, int user_id) {
         GetUserChatMessages getUserChatMessages = new GetUserChatMessages();
         getUserChatMessages.setRoomId(room_id);
         getUserChatMessages.setParticipantId(participant_id);
@@ -55,19 +55,19 @@ public class ChatHelpers {
         return getUserChatMessages;
     }
 
-    public static GetChatUsersList createBodyForGetChatUsersList(int user_id){
+    public static GetChatUsersList createBodyForGetChatUsersList(int user_id) {
         GetChatUsersList getChatUsersList = new GetChatUsersList();
         getChatUsersList.setUserId(user_id);
         return getChatUsersList;
     }
 
-    public static GetChatRequestsList createBodyForGetChatRequestsList(int user_id){
+    public static GetChatRequestsList createBodyForGetChatRequestsList(int user_id) {
         GetChatRequestsList getChatRequestsList = new GetChatRequestsList();
         getChatRequestsList.setUserId(user_id);
         return getChatRequestsList;
     }
 
-    public static MarkUserChatAsRead createBodyForMarkUserChatAsRead(int participant_id, int user_id, String username, String receiver_username, int receiver_user_id){
+    public static MarkUserChatAsRead createBodyForMarkUserChatAsRead(int participant_id, int user_id, String username, String receiver_username, int receiver_user_id) {
         MarkUserChatAsRead markUserChatAsRead = new MarkUserChatAsRead();
         markUserChatAsRead.setParticipantId(participant_id);
         markUserChatAsRead.setUserId(user_id);
@@ -77,7 +77,7 @@ public class ChatHelpers {
         return markUserChatAsRead;
     }
 
-    public static SendChatRequest createBodyForSendChatRequest(int from_user_id, String from_username, String to_username, int to_user_id){
+    public static SendChatRequest createBodyForSendChatRequest(int from_user_id, String from_username, String to_username, int to_user_id) {
         SendChatRequest sendChatRequest = new SendChatRequest();
         sendChatRequest.setFromUserId(from_user_id);
         sendChatRequest.setFromUsername(from_username);
@@ -86,7 +86,7 @@ public class ChatHelpers {
         return sendChatRequest;
     }
 
-    public static UpdateChatRequest createBodyForUpdateChatRequest(int participant_id, int current_user_id, String current_username, String sender_username, int sender_user_id, int request_status){
+    public static UpdateChatRequest createBodyForUpdateChatRequest(int participant_id, int current_user_id, String current_username, String sender_username, int sender_user_id, int request_status) {
         UpdateChatRequest updateChatRequest = new UpdateChatRequest();
         updateChatRequest.setParticipantId(participant_id);
         updateChatRequest.setCurrentUserId(current_user_id);
@@ -97,7 +97,7 @@ public class ChatHelpers {
         return updateChatRequest;
     }
 
-    public static CheckRoom createBodyForCheckRoom(int sender_user_id, String sender_username, int receiver_user_id, String receiver_username){
+    public static CheckRoom createBodyForCheckRoom(int sender_user_id, String sender_username, int receiver_user_id, String receiver_username) {
         CheckRoom checkRoom = new CheckRoom();
         checkRoom.setSenderUserId(sender_user_id);
         checkRoom.setSenderUsername(sender_username);
@@ -106,7 +106,7 @@ public class ChatHelpers {
         return checkRoom;
     }
 
-    public static CreateGroup createBodyForCreateGroup(String room_name, int created_by, String created_by_username){
+    public static CreateGroup createBodyForCreateGroup(String room_name, int created_by, String created_by_username) {
         CreateGroup createGroup = new CreateGroup();
         createGroup.setRoomName(room_name);
         createGroup.setCreatedBy(created_by);
@@ -114,7 +114,7 @@ public class ChatHelpers {
         return createGroup;
     }
 
-    public static UpdateGroupName createBodyForUpdateGroupName(int room_id, String room_name, int created_by, String created_by_username, int participant_id){
+    public static UpdateGroupName createBodyForUpdateGroupName(int room_id, String room_name, int created_by, String created_by_username, int participant_id) {
         UpdateGroupName updateGroupName = new UpdateGroupName();
         updateGroupName.setRoomId(room_id);
         updateGroupName.setRoomName(room_name);
@@ -124,7 +124,7 @@ public class ChatHelpers {
         return updateGroupName;
     }
 
-    public static AddGroupMembers createBodyForGroupMembers(int room_id, int created_by, String created_by_username){
+    public static AddGroupMembers createBodyForGroupMembers(int room_id, int created_by, String created_by_username) {
         AddGroupMembers addGroupMembers = new AddGroupMembers();
         addGroupMembers.setRoomId(room_id);
         addGroupMembers.setCreatedBy(created_by);
@@ -132,7 +132,7 @@ public class ChatHelpers {
         return addGroupMembers;
     }
 
-    public static DeleteGroup createBodyForDeleteGroup(int room_id, int deleted_by, String deleted_by_username){
+    public static DeleteGroup createBodyForDeleteGroup(int room_id, int deleted_by, String deleted_by_username) {
         DeleteGroup deleteGroup = new DeleteGroup();
         deleteGroup.setRoomId(room_id);
         deleteGroup.setDeletedBy(deleted_by);
@@ -140,7 +140,7 @@ public class ChatHelpers {
         return deleteGroup;
     }
 
-    public static LeaveGroup createBodyForLeaveGroup(int room_id, int user_id, String username, int deleted_by, String deleted_by_username, int participant_id){
+    public static LeaveGroup createBodyForLeaveGroup(int room_id, int user_id, String username, int deleted_by, String deleted_by_username, int participant_id) {
         LeaveGroup leaveGroup = new LeaveGroup();
         leaveGroup.setRoomId(room_id);
         leaveGroup.setUserId(user_id);
@@ -151,7 +151,7 @@ public class ChatHelpers {
         return leaveGroup;
     }
 
-    public static ManageBlackList createBodyForManageBlackList(int user_id, int blocked_by, boolean is_blocked){
+    public static ManageBlackList createBodyForManageBlackList(int user_id, int blocked_by, boolean is_blocked) {
         ManageBlackList manageBlackList = new ManageBlackList();
         manageBlackList.setUserId(user_id);
         manageBlackList.setBlockedBy(blocked_by);

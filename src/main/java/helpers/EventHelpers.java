@@ -5,7 +5,7 @@ import main.java.pojo.community.events.*;
 import java.util.ArrayList;
 
 public class EventHelpers {
-    public static CreateEvents createBodyForCreateEvent(String status, String title, String content, ArrayList categories, CreateEventFields fields){
+    public static CreateEvents createBodyForCreateEvent(String status, String title, String content, ArrayList categories, CreateEventFields fields) {
         CreateEvents createEvents = new CreateEvents();
         createEvents.setStatus(status);
         createEvents.setTitle(title);
@@ -15,7 +15,7 @@ public class EventHelpers {
         return createEvents;
     }
 
-    public static CreateEventFields createBodyForCreateFields(String media, String start, String end, String what_to_expect, String visiblity_rule, String chat_rule, String topic, String type, String event_status){
+    public static CreateEventFields createBodyForCreateFields(String media, String start, String end, String what_to_expect, String visiblity_rule, String chat_rule, String topic, String type, String event_status) {
         CreateEventFields fields = new CreateEventFields();
         fields.setMedia(media);
         fields.setStart(start);
@@ -29,7 +29,7 @@ public class EventHelpers {
         return fields;
     }
 
-    public static EditEventFields createBodyForEditFields(String media, String start, String end, String what_to_expect, String visiblity_rule, String chat_rule, String topic, String type){
+    public static EditEventFields createBodyForEditFields(String media, String start, String end, String what_to_expect, String visiblity_rule, String chat_rule, String topic, String type) {
         EditEventFields fields = new EditEventFields();
         fields.setMedia(media);
         fields.setStart(start);
@@ -42,7 +42,7 @@ public class EventHelpers {
         return fields;
     }
 
-    public static EditEvents createBodyForEditEvents(String status, String title, String content, ArrayList categories, EditEventFields fields){
+    public static EditEvents createBodyForEditEvents(String status, String title, String content, ArrayList categories, EditEventFields fields) {
         EditEvents editEvents = new EditEvents();
         editEvents.setStatus(status);
         editEvents.setTitle(title);
@@ -52,25 +52,25 @@ public class EventHelpers {
         return editEvents;
     }
 
-    public static SaveLiveSessionId createBodyForSaveLiveSessionId(FieldEvents fieldEvents){
+    public static SaveLiveSessionId createBodyForSaveLiveSessionId(FieldEvents fieldEvents) {
         SaveLiveSessionId saveLiveSessionId = new SaveLiveSessionId();
         saveLiveSessionId.setFields(fieldEvents);
         return saveLiveSessionId;
     }
 
-    public static FieldEvents createBodyForFieldEvents(String live_session_id){
+    public static FieldEvents createBodyForFieldEvents(String live_session_id) {
         FieldEvents fieldEvents = new FieldEvents();
         fieldEvents.setLiveSessionId(live_session_id);
         return fieldEvents;
     }
 
-    public static CompleteEvent createBodyForCompleteEvent(CompleteEventFields completeEventFields){
+    public static CompleteEvent createBodyForCompleteEvent(CompleteEventFields completeEventFields) {
         CompleteEvent completeEvent = new CompleteEvent();
         completeEvent.setFields(completeEventFields);
         return completeEvent;
     }
 
-    public static CompleteEventFields createBodyForCompleteEvents(String recording, String event_status){
+    public static CompleteEventFields createBodyForCompleteEvents(String recording, String event_status) {
         CompleteEventFields completeEventFields = new CompleteEventFields();
         completeEventFields.setRecording(recording);
         completeEventFields.setEventStatus(event_status);

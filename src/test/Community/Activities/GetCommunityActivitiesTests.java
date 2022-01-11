@@ -5,6 +5,7 @@ import io.restassured.config.RestAssuredConfig;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.UtilsHelpers;
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class GetCommunityActivitiesTests extends EnvironmentHelper {
                 contentType("application/json").
                 with().
                 header("Authorization", ACCESS_TOKEN).
-                queryParam("post_id",2053).
+                queryParam("post_id", 2053).
                 log().ifValidationFails().
                 when().
                 request("GET", ENDPOINT).
@@ -29,7 +30,9 @@ public class GetCommunityActivitiesTests extends EnvironmentHelper {
                 log().ifValidationFails().
                 statusCode(200).
                 assertThat().
+                time(Matchers.lessThan(2000l)).
                 extract().body();
+
     }
 
 }

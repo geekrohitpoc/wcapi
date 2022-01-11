@@ -5,6 +5,7 @@ import io.restassured.config.RestAssuredConfig;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.UtilsHelpers;
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -31,6 +32,7 @@ public class RateGroupTests extends EnvironmentHelper {
                 log().ifValidationFails().
                 statusCode(200).
                 assertThat().
+                time(Matchers.lessThan(2000l)).
                 extract().body();
     }
 }

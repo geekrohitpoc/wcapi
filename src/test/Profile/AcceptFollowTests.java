@@ -7,7 +7,6 @@ import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.ProfileHelpers;
 import main.java.helpers.UtilsHelpers;
 import main.java.pojo.profile.AcceptFollower;
-import main.java.pojo.profile.FollowUser;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

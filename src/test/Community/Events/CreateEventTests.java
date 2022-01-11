@@ -6,8 +6,8 @@ import io.restassured.response.ResponseBodyExtractionOptions;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.EventHelpers;
 import main.java.helpers.UtilsHelpers;
-import main.java.pojo.community.events.CreateEvents;
 import main.java.pojo.community.events.CreateEventFields;
+import main.java.pojo.community.events.CreateEvents;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

@@ -8,7 +8,6 @@ import main.java.helpers.EventHelpers;
 import main.java.helpers.UtilsHelpers;
 import main.java.pojo.community.events.EditEventFields;
 import main.java.pojo.community.events.EditEvents;
-import main.java.pojo.community.events.CreateEventFields;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

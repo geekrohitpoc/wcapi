@@ -5,6 +5,7 @@ import io.restassured.config.RestAssuredConfig;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.UtilsHelpers;
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -21,10 +22,10 @@ public class AddPollVoteTests extends EnvironmentHelper {
                 contentType("application/json").
                 with().
                 header("Authorization", ACCESS_TOKEN).
-                queryParam("activity_id",235).
-                queryParam("option_id",319).
-                queryParam("user_id",17).
-                queryParam("post_id",2076).
+                queryParam("activity_id", 235).
+                queryParam("option_id", 319).
+                queryParam("user_id", 17).
+                queryParam("post_id", 2076).
                 log().ifValidationFails().
                 when().
                 request("POST", ENDPOINT).
@@ -32,6 +33,8 @@ public class AddPollVoteTests extends EnvironmentHelper {
                 log().ifValidationFails().
                 statusCode(200).
                 assertThat().
+                time(Matchers.lessThan(2000l)).
                 extract().body();
+
     }
 }

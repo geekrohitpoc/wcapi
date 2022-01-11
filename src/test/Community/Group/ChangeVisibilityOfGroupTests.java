@@ -7,8 +7,6 @@ import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.GroupHelpers;
 import main.java.helpers.UtilsHelpers;
 import main.java.pojo.community.group.ChangeVisibilityOfGroup;
-import main.java.pojo.community.group.EditGroup;
-import main.java.pojo.community.group.Fields;
 import main.java.pojo.community.group.VisibilityRuleField;
 import org.testng.annotations.Test;
 

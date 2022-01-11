@@ -6,9 +6,9 @@ import java.util.Properties;
 
 public class UtilsHelpers {
     public static String getProperties(String fileName, String propertyName) throws IOException {
-        String filePath = System.getProperty("user.dir") + "/src/main/resources/propertiesFiles/"+fileName;
+        String filePath = System.getProperty("user.dir") + "/src/main/resources/propertiesFiles/" + fileName;
         FileReader file = new FileReader(filePath);
-        Properties properties =  new Properties();
+        Properties properties = new Properties();
         properties.load(file);
         String property = properties.getProperty(propertyName);
         return property;

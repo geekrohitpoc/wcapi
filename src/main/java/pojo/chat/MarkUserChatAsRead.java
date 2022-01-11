@@ -1,11 +1,11 @@
 package main.java.pojo.chat;
 
 public class MarkUserChatAsRead {
-      private int participantId;
-      private int userId;
-      private String username;
-      private String receiversUsername;
-      private int receiverUserId;
+    private int participantId;
+    private int userId;
+    private String username;
+    private String receiversUsername;
+    private int receiverUserId;
 
     public int getParticipantId() {
         return participantId;

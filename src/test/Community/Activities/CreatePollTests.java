@@ -7,6 +7,7 @@ import main.java.helpers.ActivityHelpers;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.UtilsHelpers;
 import main.java.pojo.community.activities.CreatePoll;
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -37,6 +38,8 @@ public class CreatePollTests extends EnvironmentHelper {
                 log().ifValidationFails().
                 statusCode(200).
                 assertThat().
+                time(Matchers.lessThan(2000l)).
                 extract().body();
+
     }
 }

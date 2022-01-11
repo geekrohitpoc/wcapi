@@ -6,6 +6,7 @@ public class EditComment {
     public String getContent() {
         return content;
     }
+
     public void setContent(String content) {
         this.content = content;
     }

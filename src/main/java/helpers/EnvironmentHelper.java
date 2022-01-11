@@ -1,19 +1,10 @@
 package main.java.helpers;
 
 import io.restassured.RestAssured;
-import io.restassured.config.EncoderConfig;
-import io.restassured.config.RestAssuredConfig;
-import io.restassured.response.ResponseBodyExtractionOptions;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
-import java.io.IOException;
-
-import static io.restassured.RestAssured.given;
 
 public class EnvironmentHelper {
-    public static String ENV = ((System.getProperty("ENV")==null || System.getProperty("ENV").isEmpty()) ? "http://wc.techechelons.net" : System.getProperty("ENV"));
+    public static String ENV = ((System.getProperty("ENV") == null || System.getProperty("ENV").isEmpty()) ? "http://wc.techechelons.net" : System.getProperty("ENV"));
     public static String ACCESS_TOKEN = System.getProperty("ACCESS_TOKEN");
 
     @BeforeSuite(groups = {"sanity", "regression"})

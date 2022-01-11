@@ -6,13 +6,11 @@ import io.restassured.response.ResponseBodyExtractionOptions;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.ProfileHelpers;
 import main.java.helpers.UtilsHelpers;
-import main.java.pojo.profile.FollowUser;
 import main.java.pojo.profile.UserFavActivities;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static io.restassured.RestAssured.given;
 

@@ -1,12 +1,12 @@
 package main.java.pojo.chat;
 
 public class DeleteMessage {
-      private int roomId;
-      private int messageId;
-      private int userId;
-      private String username;
-      private String receiverUsername;
-      private int receiverUserId;
+    private int roomId;
+    private int messageId;
+    private int userId;
+    private String username;
+    private String receiverUsername;
+    private int receiverUserId;
 
     public int getRoomId() {
         return roomId;

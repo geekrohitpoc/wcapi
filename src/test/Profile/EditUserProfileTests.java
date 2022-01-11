@@ -6,7 +6,6 @@ import io.restassured.response.ResponseBodyExtractionOptions;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.ProfileHelpers;
 import main.java.helpers.UtilsHelpers;
-import main.java.pojo.profile.AcceptFollower;
 import main.java.pojo.profile.EditUserProfile;
 import main.java.pojo.profile.Meta;
 import org.testng.annotations.Test;

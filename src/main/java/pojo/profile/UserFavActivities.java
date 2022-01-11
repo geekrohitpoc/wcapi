@@ -1,7 +1,6 @@
 package main.java.pojo.profile;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserFavActivities {
 

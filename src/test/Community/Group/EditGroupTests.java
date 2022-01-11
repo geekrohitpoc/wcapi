@@ -6,7 +6,6 @@ import io.restassured.response.ResponseBodyExtractionOptions;
 import main.java.helpers.EnvironmentHelper;
 import main.java.helpers.GroupHelpers;
 import main.java.helpers.UtilsHelpers;
-import main.java.pojo.community.group.CreateGroup;
 import main.java.pojo.community.group.EditGroup;
 import main.java.pojo.community.group.Fields;
 import org.testng.annotations.Test;

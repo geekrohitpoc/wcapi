@@ -8,8 +8,6 @@ import main.java.helpers.EventHelpers;
 import main.java.helpers.UtilsHelpers;
 import main.java.pojo.community.events.CompleteEvent;
 import main.java.pojo.community.events.CompleteEventFields;
-import main.java.pojo.community.events.FieldEvents;
-import main.java.pojo.community.events.SaveLiveSessionId;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
