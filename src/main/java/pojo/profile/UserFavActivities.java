@@ -5,15 +5,13 @@ import java.util.List;
 
 public class UserFavActivities {
 
-    public List<Integer> getIds() {
+    public ArrayList<Integer> ids;
+
+    public ArrayList<Integer> getIds() {
         return ids;
     }
 
-    public void setIds(List<Integer> ids) {
+    public void setIds(ArrayList<Integer> ids) {
         this.ids = ids;
     }
-
-    List<Integer> ids;
-
-
 }

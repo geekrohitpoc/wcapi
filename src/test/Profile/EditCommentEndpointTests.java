@@ -25,11 +25,11 @@ public class EditCommentEndpointTests extends EnvironmentHelper {
                 with().
                 header("Authorization", ACCESS_TOKEN).
                 body(editComment).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("PUT", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

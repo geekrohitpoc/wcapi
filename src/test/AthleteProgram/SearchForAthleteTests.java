@@ -20,13 +20,13 @@ public class SearchForAthleteTests extends EnvironmentHelper{
                 config(RestAssuredConfig.config().encoderConfig(EncoderConfig.encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false))).
                 contentType("application/json").
                 with().
-                queryParam("user_role", 87).
+                queryParam("user_role", "author").
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("GET", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

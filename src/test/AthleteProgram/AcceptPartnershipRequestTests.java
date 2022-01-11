@@ -22,11 +22,11 @@ public class AcceptPartnershipRequestTests extends EnvironmentHelper {
                 with().
                 queryParam("accept_of", 59).
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("POST", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

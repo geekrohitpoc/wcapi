@@ -22,11 +22,11 @@ public class UnfollowTests extends EnvironmentHelper {
                 with().
                 queryParam("user_id", 10).
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("DELETE", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

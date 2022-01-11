@@ -47,7 +47,7 @@ public class ProfileHelpers {
         return editUserProfile;
     }
 
-    public static UserFavActivities creatBodyForUserFavActivities(List ids){
+    public static UserFavActivities creatBodyForUserFavActivities(ArrayList ids){
         UserFavActivities userFavActivities = new UserFavActivities();
         userFavActivities.setIds(ids);
         return userFavActivities;
