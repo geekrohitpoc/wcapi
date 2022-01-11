@@ -2,6 +2,7 @@
 *.class
 .idea/
 .DS_Store
+target
 wcapi.iml
 # Log file
 *.log

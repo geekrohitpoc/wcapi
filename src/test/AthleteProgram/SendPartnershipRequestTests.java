@@ -24,11 +24,11 @@ public class SendPartnershipRequestTests extends EnvironmentHelper {
                 queryParam("athelete_id", 59).
                 queryParam("requested_by", 87).
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("POST", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

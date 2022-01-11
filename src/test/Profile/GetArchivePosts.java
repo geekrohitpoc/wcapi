@@ -23,11 +23,11 @@ public class GetArchivePosts extends EnvironmentHelper {
                 queryParam("status", "draft").
                 queryParam("author", 17).
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("GET", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

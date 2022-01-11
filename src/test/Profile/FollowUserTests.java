@@ -25,14 +25,13 @@ public class FollowUserTests extends EnvironmentHelper {
                 with().
                 header("Authorization", ACCESS_TOKEN).
                 body(followUser).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("POST", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();
     }
-
 }

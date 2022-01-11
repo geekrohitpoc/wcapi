@@ -21,11 +21,11 @@ public class GetSuggestionsTests extends EnvironmentHelper {
                 contentType("application/json").
                 with().
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("GET", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

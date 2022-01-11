@@ -27,11 +27,11 @@ public class PostUserDeviceInfoTests extends EnvironmentHelper {
                 queryParam("is_subscribed", true).
                 queryParam("push_token", "fsdffdsfd").
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("POST", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

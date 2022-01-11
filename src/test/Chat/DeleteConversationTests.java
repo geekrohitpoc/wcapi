@@ -24,12 +24,12 @@ public class DeleteConversationTests extends EnvironmentHelper {
                 contentType("application/json").
                 with().
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 body(deleteConversation).
                 when().
                 request("DELETE", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

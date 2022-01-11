@@ -26,11 +26,11 @@ public class AcceptFollowTests extends EnvironmentHelper {
                 with().
                 header("Authorization", ACCESS_TOKEN).
                 body(acceptFollower).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("POST", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

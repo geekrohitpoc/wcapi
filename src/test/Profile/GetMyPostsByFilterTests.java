@@ -23,11 +23,11 @@ public class GetMyPostsByFilterTests extends EnvironmentHelper {
                 queryParam("author", 17).
                 queryParam("categories", 4).
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("GET", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Techechelons API Tests">
-    <test name="SanityTest" verbose="10" parallel="classes" thread-count="3">
+<suite name="WildCountry API Tests">
+    <listeners>
+        <listener class-name="main.java.listeners.TestSuiteListeners"/>
+    </listeners>
+    <test name="SanityTest" verbose="10" parallel="classes" thread-count="5">
         <groups>
             <run>
-                <include name="sanity"></include>
+                <include name="sanity"/>
             </run>
         </groups>
         <packages>
-            <package name="test.Chat"></package>
-            <package name="test.Profile"></package>
-            <package name="test.AthleteProgram"></package>
+            <package name="test.Community"/>
+            <package name="test.Community.Chat"/>
+            <package name="test.Community.Activities"/>
+            <package name="test.Community.Events"/>
+            <package name="test.Community.Group"/>
+            <package name="test.Community.Others"/>
+            <package name="test.Profile"/>
+<!--            <package name="test.Chat"/>-->
+            <package name="test.AthleteProgram"/>
         </packages>
     </test>
 </suite>

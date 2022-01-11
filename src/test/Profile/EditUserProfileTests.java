@@ -28,11 +28,11 @@ public class EditUserProfileTests extends EnvironmentHelper {
                 with().
                 header("Authorization", ACCESS_TOKEN).
                 body(editUserProfile).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("PUT", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();

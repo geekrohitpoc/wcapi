@@ -25,11 +25,11 @@ public class GetPeopleWhoLikedPostsTests extends EnvironmentHelper {
                 queryParam("page", 1).
                 queryParam("per_page", 10).
                 header("Authorization", ACCESS_TOKEN).
-                log().all().
+                log().ifValidationFails().
                 when().
                 request("GET", ENDPOINT).
                 then().
-                log().all().
+                log().ifValidationFails().
                 statusCode(200).
                 assertThat().
                 extract().body();
